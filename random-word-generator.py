@@ -65,7 +65,7 @@ def generate_unique_shuffled_word(word):
         shuffled_word = shuffle_word(word)
         simliar_percent = SequenceMatcher(None, shuffled_word, word).ratio()
 
-        if MINIMUM_WORD_LENGTH >= 5 and simliar_percent <= 0.7:
+        if MINIMUM_WORD_LENGTH >= 5 and simliar_percent <= 0.5:
             break
 
     return shuffled_word
