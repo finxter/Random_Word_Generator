@@ -96,9 +96,10 @@ def main():
     while (guess != correct_word and guess != "" ) :
         print("Sorry, that's not it")
         guess = input("Your guess: ")
-        if guess == correct_word:
-            print("That's it, you guessed it!\n")
-            print("Thanks for playing")
+    
+    if guess == correct_word:
+        print("That's it, you guessed it!\n")
+        print("Thanks for playing")
   
     input("\n\nPress the enter key to exit")
 
