@@ -7,8 +7,8 @@ from pathlib import Path
 #GAME SETTINGS
 MINIMUM_WORD_LENGTH = 5
 MAXIMUM_WORD_LENGTH = 7
-WORDS_FROM_FILE = True
-WORD_LIST_TO_USE = "NORVIG_WORDS"
+WORDS_FROM_FILE = False
+WORD_LIST_TO_USE = "THIRD_GRADE_WORDS"
 
 WORD_LIST_WEB = {
   "MIT_WORDS": "https://www.mit.edu/~ecprice/wordlist.10000",
@@ -99,9 +99,7 @@ def main():
         if guess == correct_word:
             print("That's it, you guessed it!\n")
             print("Thanks for playing")
-
+  
     input("\n\nPress the enter key to exit")
-   
-
 
 main()
