@@ -1,14 +1,15 @@
 import random
 import requests
 import re
+import os
 from difflib import SequenceMatcher
 from pathlib import Path
 
 #GAME SETTINGS
 MINIMUM_WORD_LENGTH = 5
 MAXIMUM_WORD_LENGTH = 7
-WORDS_FROM_FILE = False
-WORD_LIST_TO_USE = "THIRD_GRADE_WORDS"
+WORDS_FROM_FILE = True
+WORD_LIST_TO_USE = 'THIRD_GRADE_WORDS'
 
 WORD_LIST_WEB = {
   "MIT_WORDS": "https://www.mit.edu/~ecprice/wordlist.10000",
@@ -19,9 +20,9 @@ WORD_LIST_WEB = {
 WORD_LIST_FILE = {
   "MIT_WORDS": "mit_wordlist.10000",
   "NORVIG_WORDS": "norvig_count_1w.txt",
-  "THIRD_GRADE_WORDS": "p-3_ok.txt"
+  "THIRD_GRADE_WORDS": "p-3_ok.txt",
+ 
 }
-
 
 def get_word_list_from_web(word_site):
     response = requests.get(word_site)
@@ -42,9 +43,8 @@ def format_words(words):
 
 def get_words_from_file(word_path):
     file_directory =  Path().absolute()
-    
-    word_file_path = str(file_directory) + "\\" + WORD_LIST_FILE[WORD_LIST_TO_USE]
-   
+  
+    word_file_path =  os.path.join(file_directory, WORD_LIST_FILE[WORD_LIST_TO_USE])
     words = open(word_file_path).readlines()
     
     return words
